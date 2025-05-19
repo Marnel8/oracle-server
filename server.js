@@ -4,7 +4,7 @@ const axios = require("axios");
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors());
@@ -54,7 +54,8 @@ app.post("/api/chat", async (req, res) => {
 		2. If the user asks about content, use the headings and main content to provide relevant information
 		3. If the user needs to navigate somewhere, use the available links to guide them
 		4. Keep your answers concise, helpful, and relevant to the user's query
-		5. If you're not sure about something, say so and suggest what information might help`;
+		5. If you're not sure about something, say so and suggest what information might help
+		6. Remember the conversation context and use it to provide a more accurate response`;
 
 		console.log("Sending request to Ollama:", {
 			model: "llama3.2",
